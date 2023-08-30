@@ -1,0 +1,480 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: red solid 1px; */
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif,'Markazi Text', serif,'Nunito Sans', sans-serif,'Karla';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  display: grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-template-rows: repeat(3, auto);
+}
+
+.navbar {
+  grid-column: 2 / span 10;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+}
+
+#logo {
+  width: 170px;
+  height: 60px;
+  padding: 0.5rem;
+}
+
+.navbar-list{
+  display: flex;
+}
+
+.navbar-list li a {
+  text-decoration: none;
+  color: #495E57;
+  display: block;
+  padding: 1rem;
+}
+
+.navbar-list li{
+  list-style: none;
+}
+
+.navbar-list li a:hover{
+  background-color: #495E57;
+  color: #EDEFEE;
+  border-radius: 16px;
+}
+
+.toggle-button {
+  position: absolute;
+  right: 3%;
+  top: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  display: none;
+}
+
+.bar {
+  background-color:#495E57;
+  width: 30px;
+  height: 5px;
+  border-radius: 20%;
+}
+
+@media (max-width:1007px){
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    width: 100%;
+  }
+
+  .navbar-list {
+    display: none;
+  }
+
+  .navbar-list.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-list a{
+    padding: 0.5rem;
+  }
+
+  .navbar-list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+}
+/* Small (smaller than 640px) */
+/* Medium (641px to 1007px) */
+/* Large (1008px and larger) */
+
+main {
+  grid-column: 1 / span 12;
+  display: grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-template-rows: repeat(4,auto);
+}
+
+.hero {
+  grid-column: 1 / span 12;
+  background-color: #495E57;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ECC94B;
+  padding: 1rem;
+  border-radius: 16px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  flex-shrink: 1;
+}
+
+#hero-img {
+  border: #495E57 solid 10px;
+  border-radius: 25px;
+  width: 100%;
+
+}
+
+.hero-text h1 {
+  padding-top: 20px;
+  color: #EDEFEE;
+  font-family: 'Markazi Text', serif;
+  font-size: 60px;
+}
+
+.hero-text h3 {
+  color: #ECC94B;
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+}
+
+.hero-text p{
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right: 20px;
+  color: #EDEFEE;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+}
+
+.btn {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color:#ECC94B ;
+  border-radius: 16px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #495E57;
+}
+
+.hero-text {
+  margin-top: 50px;
+  margin-bottom: 200px;
+  padding-left: 10px;
+}
+
+.highlights {
+  grid-column: 3 / span 8;
+}
+
+.highlights-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap :45%;
+}
+
+.highlights-top h1{
+  font-family: 'Markazi Text', serif;
+  font-size: 45px;
+  color: #495E57;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+.product {
+  position: relative;
+  flex: 0 1 250px;
+  border-radius: 5% 5% 0% 0%;
+  box-shadow: 20px 5px 5px rgb(156, 153, 153);
+  background-color: #ECC94B;
+  border: #ECC94B solid 10px;
+}
+
+.product-tag {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #495E57;
+}
+
+.product-image{
+  width: 100%;
+}
+
+.product p{
+  padding: 5px;
+  margin-bottom: 60px;
+  font-family: 'Karla', sans-serif;
+  font-size: 15px;
+}
+
+.product button{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color:#d7d5cc ;
+  border-radius: 5px;
+  font-family: 'Karla', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #495E57;
+}
+
+.testimonials {
+  grid-column: 2 / span 10;
+  margin-bottom: 50px;
+}
+
+.testimonials h1{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-family: 'Markazi Text', serif;
+  font-size: 45px;
+  color: #495E57;
+}
+
+.reviews {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  color: #495E57;
+}
+
+.review {
+  position: relative;
+  flex: 1 1 300px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+}
+
+.review div{
+position: absolute;
+width: 100%;
+bottom: 5px;
+font-weight: 600;
+}
+
+.review > img {
+  border: #ECC94B 3px solid;
+  border-radius: 50%;
+}
+
+.about {
+  grid-column: 1 / span 12;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #495E57;
+}
+
+.about-des{
+  flex: 0 1 400px;
+  padding: 20px;
+}
+
+.about-des h1 {
+  padding-top: 20px;
+  color: #EDEFEE;
+  font-family: 'Markazi Text', serif;
+  font-size: 60px;
+}
+
+.about-des h3 {
+  color: #ECC94B;
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+}
+
+.about-des p{
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right: 20px;
+  color: #EDEFEE;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+}
+
+.about-imgs{
+  flex: 0 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ma2 {
+  border-radius: 16%;
+  width: 100%;
+  /* height: 100%; */
+  border: #ECC94B solid 5px;
+}
+
+.online-order,
+.menu,
+.login{
+  grid-column: 1/ span 12;
+  text-align: center;
+  width: 100%;
+  height: 40rem;
+  background-color: #495E57;
+  color: #EDEFEE;
+  font-family:'Markazi Text';
+  font-size: 25px;
+}
+
+.booking-page{
+  grid-column: 1/ span 12;
+  display: flex;
+  justify-content: center;
+  background-color: #495E57;
+  height: 40rem;
+  background-image: linear-gradient(rgba(174, 200, 71, 0.5), rgba(70, 139, 78, 0.5)),
+  url("./images/restaurant.jpg");
+  background-size: cover;
+}
+
+.form-meterial {
+  flex-basis: 25rem;
+  padding-top: 10px;
+  background-color: #ECC94B;
+}
+
+.form-flex {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-title {
+  margin-bottom: 3px;
+  text-align: center;
+  color: #495E57;
+}
+
+.booking-confirm{
+  grid-column: 1/ span 12;
+  text-align: center;
+  width: 100%;
+  height: 40rem;
+  background-color: #495E57;
+  color: #EDEFEE;
+  font-family:'Karla', sans-serif;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booking-confirm-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.booking-confirm-list {
+  list-style: none;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+footer {
+  grid-column: 3 / span 7;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  color: #495E57;
+}
+
+footer ul{
+list-style: none;
+}
+
+footer li a{
+  text-decoration: none;
+  color: #495E57;
+}
+
+footer li a:hover{
+  color: #ECC94B;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.footer-links span {
+  font-weight: 600;
+}
+
+.copyrights {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#sm {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+}
